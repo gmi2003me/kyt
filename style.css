@@ -127,20 +127,21 @@ body {
     margin-bottom: 0; /* Remove bottom margin, use padding */
     padding: 0; /* Remove default padding if any */
     position: relative; /* Needed for absolute positioning of pseudo-element if used */
-    padding-left: 20px; /* Space for the custom bullet */
+    /* Remove left padding, no longer needed for bullets */
+    /* padding-left: 20px; */
 }
 
-/* Apply custom blue bullet point to ANY li inside a card */
-.card li::before {
+/* Remove custom blue bullet point rule */
+/* .card li::before {
     content: "•";
-    color: #007bff; /* Blue color */
+    color: #007bff;
     font-weight: bold;
     display: inline-block;
     position: absolute;
     left: 5px;
-    top: 6px; /* Adjust vertical alignment */
-    font-size: 1.2em; /* Adjust bullet size */
-}
+    top: 6px;
+    font-size: 1.2em;
+} */
 
 /* Apply alternating background color to ANY li inside a card */
 .card li:nth-child(even) {
@@ -153,7 +154,8 @@ body {
     color: #007bff;
     cursor: pointer;
     display: block; /* Make link take full width for easier clicking */
-    padding: 8px 5px 8px 0; /* Add padding to the link itself for spacing and click area */
+    /* Adjust padding now that bullet is gone */
+    padding: 8px 5px 8px 5px;
 }
 
 /* Apply link hover styles to ANY a inside a card */
