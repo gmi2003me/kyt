@@ -37,9 +37,9 @@ function displayArtistList(artistsText, targetListElement) {
          return;
     }
 
-    // Split by comma, remove potential leading numbers, trim, and filter empty
+    // Split by comma, trim whitespace, THEN remove leading numbers, and filter empty
     const artistNames = artistsText.split(',')
-                                 .map(name => name.replace(/^\d+\.\s*/, '').trim()) // Remove numbers and trim
+                                 .map(name => name.trim().replace(/^\d+[\.\)]?\s*/, '')) // Trim first, then remove numbers (optional . or ) )
                                  .filter(name => name);
 
     if (artistNames.length === 0) {
