@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karaoke Fun</title>
+    <!-- Google Font Import -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="left-panel">
+            <div class="search-module">
+                <h2>Search for an Artist or Band</h2>
+                <form id="search-form">
+                    <input type="text" id="search-input" placeholder="Enter artist or band name" required>
+                    <button type="submit">Search</button>
+                </form>
+            </div>
+
+            <!-- New container for side-by-side modules -->
+            <div class="modules-container">
+                <div class="results-module card">
+                    <h2 id="results-title">Songs by...</h2>
+                    <ul id="results-list">
+                        <!-- Video links will be populated here -->
+                    </ul>
+                </div>
+
+                <div class="related-module card">
+                    <h2 id="related-title">Related artists</h2>
+                    <ul id="related-list">
+                        <!-- Related artist links will be populated here -->
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Second row container for genre modules -->
+            <div class="modules-container">
+                <!-- Male 80s R&B Module -->
+                <div id="male-80s-module" class="card">
+                    <h2>Male 80s R&B</h2>
+                    <ul id="male-80s-list">
+                        <!-- Artists will be populated here -->
+                        <li>Loading artists...</li>
+                    </ul>
+                </div>
+
+                <!-- Female 80s R&B Module -->
+                <div id="female-80s-module" class="card">
+                    <h2>Female 80s R&B</h2>
+                    <ul id="female-80s-list">
+                        <!-- Artists will be populated here -->
+                        <li>Loading artists...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Remove the right panel -->
+        <!-- <div class="right-panel">
+            <iframe id="youtube-iframe" src="about:blank" width="100%" height="100%" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div> -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 

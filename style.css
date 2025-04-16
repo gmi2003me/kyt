@@ -1,0 +1,183 @@
+body {
+    font-family: 'Nunito', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Subtle light blue to white gradient */
+    background: linear-gradient(to bottom, #e7f5ff, #ffffff);
+    min-height: 100vh; /* Ensure gradient covers full height */
+}
+
+.container {
+    display: block; /* Change from flex to block */
+    min-height: 100vh;
+}
+
+.left-panel {
+    min-width: 100%; /* Take full width */
+    padding: 5px 20px 20px 20px; /* Reduce top padding */
+    /* Remove background - page has gradient now */
+    /* background-color: #f0f8ff; */
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between items */
+    min-height: 100vh; /* Ensure it takes full height */
+    box-sizing: border-box; /* Include padding in width/height */
+}
+
+/* Container for results and related artists */
+.modules-container {
+    display: flex;
+    gap: 20px; /* Space between the two cards */
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+/* Adjust modules within the container */
+.modules-container > .card {
+    flex: 1; /* Each card takes equal space */
+    min-width: 300px; /* Minimum width before wrapping */
+    /* Ensure they don't shrink below min-width */
+    flex-shrink: 0;
+}
+
+/* Card styles */
+.card {
+    background-color: #ffffff; /* White background for cards */
+    padding: 0 20px 20px 20px; /* Remove top padding */
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    /* Prevent cards from shrinking if container is too narrow */
+    flex-shrink: 0;
+}
+
+/* Style headers within cards */
+.card h2 {
+    margin-top: 0; /* Remove space above header */
+    margin-bottom: 15px; /* Adjust space below header */
+    /* Re-add background styling */
+    background-color: #f1f3f5; /* Slightly darker background for header */
+    padding: 10px 15px;
+    margin-left: -20px; /* Extend background to card edge */
+    margin-right: -20px; /* Extend background to card edge */
+    border-radius: 8px 8px 0 0; /* Match top corners of card */
+    font-size: 1.1em; /* Slightly smaller header */
+}
+
+/* Remove background and container styles from search module */
+.search-module {
+    /* background-color: rgba(255, 255, 255, 0.8); */
+    padding: 20px 20px 20px 20px;
+    /* border-radius: 8px; */
+    /* box-shadow: 0 1px 3px rgba(0,0,0,0.1); */
+}
+
+/* Style search module header (no longer a card header) */
+.search-module h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    /* No background, padding, negative margins needed */
+    font-size: 1.2em; /* Adjust size as needed */
+    text-align: center; /* Center the header text */
+}
+
+.search-module form {
+    display: flex;
+    gap: 10px; /* Increased gap */
+    align-items: center; /* Align items vertically */
+    justify-content: center; /* Center form elements */
+    flex-wrap: wrap; /* Allow wrapping if needed */
+}
+
+.search-module input[type="text"] {
+    /* flex-grow: 1; Remove grow */
+    max-width: 400px; /* Make input narrower */
+    width: 100%; /* Allow shrinking */
+    padding: 10px; /* Increased padding */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding/border in width */
+}
+
+.search-module button {
+    padding: 10px 15px; /* Increased padding */
+    flex-shrink: 0; /* Prevent button from shrinking */
+    border: none;
+    background-color: #007bff;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-module button:hover {
+    background-color: #0056b3;
+}
+
+/* Apply list styles to ANY ul inside a card */
+.card ul {
+    list-style: none; /* Keep default bullets off */
+    padding: 0;
+    margin: 10px 0 0 0; /* Add margin top */
+    max-height: 40vh; /* Adjust height as needed */
+    overflow-y: auto;
+}
+
+/* Apply list item styles to ANY li inside a card */
+.card li {
+    margin-bottom: 0; /* Remove bottom margin, use padding */
+    padding: 0; /* Remove default padding if any */
+    position: relative; /* Needed for absolute positioning of pseudo-element if used */
+    padding-left: 20px; /* Space for the custom bullet */
+}
+
+/* Apply custom blue bullet point to ANY li inside a card */
+.card li::before {
+    content: "•";
+    color: #007bff; /* Blue color */
+    font-weight: bold;
+    display: inline-block;
+    position: absolute;
+    left: 5px;
+    top: 6px; /* Adjust vertical alignment */
+    font-size: 1.2em; /* Adjust bullet size */
+}
+
+/* Apply alternating background color to ANY li inside a card */
+.card li:nth-child(even) {
+    background-color: #f8f9fa; /* Very light gray for even rows */
+}
+
+/* Apply link styles to ANY a inside a card */
+.card a {
+    text-decoration: none;
+    color: #007bff;
+    cursor: pointer;
+    display: block; /* Make link take full width for easier clicking */
+    padding: 8px 5px 8px 0; /* Add padding to the link itself for spacing and click area */
+}
+
+/* Apply link hover styles to ANY a inside a card */
+.card a:hover {
+    text-decoration: underline;
+}
+
+/* Remove the old media query */
+/* @media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-panel {
+        border-right: none;
+        border-bottom: 1px solid #ccc;
+        max-height: 50vh; 
+        overflow-y: auto;
+    }
+    .right-panel {
+        height: 50vh; 
+    }
+    .results-module ul,
+    .related-module ul {
+       max-height: none; 
+    }
+
+} */ 
