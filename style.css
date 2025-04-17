@@ -10,6 +10,31 @@ body {
     min-height: 100vh;
 }
 
+/* Header Styles */
+.site-header {
+    background-color: #4a6f4a; /* Dark green from logo background */
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between; /* Logo left, Link right */
+    align-items: center;
+}
+
+.header-logo {
+    max-height: 40px; /* Control logo size */
+    width: auto;
+}
+
+.login-link {
+    color: #e7d8ff; /* Light purple from logo */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.login-link:hover {
+    text-decoration: underline;
+}
+
 .container {
     max-width: 1200px; /* Limit overall width */
     margin: 0 auto; /* Center container */
