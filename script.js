@@ -177,7 +177,7 @@ function displayYoutubeResults(videos) {
 }
 
 async function fetchRelatedArtists(artist) {
-    const prompt = `List exactly 10 artists or bands most similar to ${artist}. Provide ONLY the names, separated by a single comma and a space (e.g., Artist 1, Artist 2, Artist 3). Do NOT use numbering or any other formatting.`;
+    const prompt = `List exactly 20 artists or bands most similar to ${artist}. Provide ONLY the names, separated by a single comma and a space (e.g., Artist 1, Artist 2, Artist 3). Do NOT use numbering or any other formatting.`;
     // Use the generic fetch function pointed at our backend
     await fetchArtistsFromBackend(prompt, relatedList, displayArtistList);
 }
