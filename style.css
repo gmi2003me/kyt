@@ -12,7 +12,7 @@ body {
 
 /* Header Styles */
 .site-header {
-    background-color: #e6e6fa; /* Lavender background */
+    background-color: #9370DB; /* Darker purple (MediumPurple) */
     padding: 10px 20px;
     display: flex;
     justify-content: space-between; /* Logo+Tagline left, Link right */
@@ -121,7 +121,7 @@ body {
 
 /* Remove background and container styles from search module */
 .search-module {
-    padding: 25px 0; /* Increased vertical padding for even spacing */
+    padding: 30px 0; /* Match gap for even vertical spacing */
 }
 
 .search-module form {
