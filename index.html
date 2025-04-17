@@ -7,11 +7,14 @@
     <!-- Google Font Import -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
+        <!-- Optional Main Title -->
+        <h1 class="main-title">Karaoke Fun</h1>
+
         <div class="left-panel">
             <div class="search-module">
                 <h2>Search for an Artist or Band</h2>
@@ -21,9 +24,10 @@
                 </form>
             </div>
 
-            <!-- New container for side-by-side modules -->
+            <!-- Container for results and related artists -->
             <div class="modules-container">
-                <div class="results-module card">
+                <!-- Add highlighted class to results module -->
+                <div class="results-module card highlighted">
                     <h2 id="results-title">Songs by...</h2>
                     <ul id="results-list">
                         <!-- Video links will be populated here -->

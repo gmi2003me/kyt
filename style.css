@@ -1,166 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@700&display=swap');
+
 body {
-    font-family: 'Nunito', sans-serif;
+    font-family: 'Lato', sans-serif; /* Default font */
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* Subtle light blue to white gradient */
-    background: linear-gradient(to bottom, #e7f5ff, #ffffff);
-    min-height: 100vh; /* Ensure gradient covers full height */
-}
-
-.container {
-    display: block; /* Change from flex to block */
+    background-color: #a8d8c8; /* Page background from image */
+    color: #333; /* Default text color */
     min-height: 100vh;
 }
 
+.container {
+    max-width: 1200px; /* Limit overall width */
+    margin: 0 auto; /* Center container */
+    padding: 0 15px; /* Add some side padding */
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: #333;
+    font-size: 2.5em; /* Adjust size */
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .left-panel {
-    min-width: 100%; /* Take full width */
-    padding: 5px 20px 20px 20px; /* Reduce top padding */
-    /* Remove background - page has gradient now */
-    /* background-color: #f0f8ff; */
+    min-width: 100%;
+    padding: 0; /* Remove padding, spacing handled by items */
     display: flex;
     flex-direction: column;
-    gap: 20px; /* Space between items */
-    min-height: 100vh; /* Ensure it takes full height */
-    box-sizing: border-box; /* Include padding in width/height */
+    gap: 30px; /* Increased gap */
+    box-sizing: border-box;
 }
 
 /* Container for results and related artists */
 .modules-container {
     display: flex;
-    gap: 20px; /* Space between the two cards */
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    gap: 30px; /* Increased gap */
+    flex-wrap: wrap;
 }
 
 /* Adjust modules within the container */
 .modules-container > .card {
-    flex: 1; /* Each card takes equal space */
-    min-width: 200px; /* Reduced minimum width */
-    /* Ensure they don't shrink below min-width */
+    flex: 1;
+    min-width: 200px;
     flex-shrink: 0;
 }
 
-/* Card styles */
+/* Card styles based on image */
 .card {
-    background-color: #ffffff; /* White background for cards */
-    padding: 0 20px 20px 20px; /* Remove top padding */
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    /* Prevent cards from shrinking if container is too narrow */
+    background-color: #fff8e7; /* Default card background */
+    padding: 25px; /* Adjust padding */
+    border-radius: 16px; /* More rounded corners */
+    box-shadow: none; /* Remove shadow */
     flex-shrink: 0;
+    display: flex; /* Use flex for vertical stacking inside card */
+    flex-direction: column;
+}
+
+/* Highlighted card style */
+.card.highlighted {
+    background-color: #ffddd2; /* Peach background */
 }
 
 /* Style headers within cards */
 .card h2 {
-    margin-top: 0; /* Remove space above header */
-    margin-bottom: 15px; /* Adjust space below header */
-    /* Re-add background styling */
-    background-color: #f1f3f5; /* Slightly darker background for header */
-    padding: 10px 15px;
-    margin-left: -20px; /* Extend background to card edge */
-    margin-right: -20px; /* Extend background to card edge */
-    border-radius: 8px 8px 0 0; /* Match top corners of card */
-    font-size: 1.1em; /* Slightly smaller header */
+    font-family: 'Playfair Display', serif;
+    margin-top: 0;
+    margin-bottom: 15px;
+    /* Remove previous background styling */
+    /* background-color: #f1f3f5; */
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+    border-radius: 0;
+    font-size: 1.5em; /* Adjust size */
+    color: #333;
+    text-align: center;
 }
 
 /* Remove background and container styles from search module */
 .search-module {
-    /* background-color: rgba(255, 255, 255, 0.8); */
-    padding: 20px 20px 20px 20px;
-    /* border-radius: 8px; */
-    /* box-shadow: 0 1px 3px rgba(0,0,0,0.1); */
+    padding: 15px 0; /* Adjust padding */
 }
 
 /* Style search module header (no longer a card header) */
 .search-module h2 {
+    font-family: 'Playfair Display', serif;
     margin-top: 0;
-    margin-bottom: 15px;
-    /* No background, padding, negative margins needed */
-    font-size: 1.2em; /* Adjust size as needed */
-    text-align: center; /* Center the header text */
+    margin-bottom: 20px;
+    font-size: 1.5em; /* Match card headers */
+    text-align: center;
+    color: #333;
 }
 
 .search-module form {
     display: flex;
-    gap: 10px; /* Increased gap */
-    align-items: center; /* Align items vertically */
-    justify-content: center; /* Center form elements */
-    flex-wrap: wrap; /* Allow wrapping if needed */
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .search-module input[type="text"] {
-    /* flex-grow: 1; Remove grow */
-    max-width: 400px; /* Make input narrower */
-    width: 100%; /* Allow shrinking */
-    padding: 10px; /* Increased padding */
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Include padding/border in width */
+    max-width: 400px;
+    width: 100%;
+    padding: 12px 15px; /* Adjust padding */
+    border: 1px solid #d3c0a0; /* Beige border */
+    border-radius: 8px; /* Rounded corners */
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    font-size: 1em;
 }
 
 .search-module button {
-    padding: 10px 15px; /* Increased padding */
-    flex-shrink: 0; /* Prevent button from shrinking */
-    border: none;
-    background-color: #007bff;
-    color: white;
-    border-radius: 4px;
+    padding: 12px 25px; /* Adjust padding */
+    flex-shrink: 0;
+    border: 1px solid #d3c0a0; /* Beige border */
+    background-color: #fff8e7; /* Beige background */
+    color: #333;
+    border-radius: 8px; /* Rounded corners */
     cursor: pointer;
-    transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 1em;
 }
 
 .search-module button:hover {
-    background-color: #0056b3;
+    background-color: #f8edd7; /* Slightly darker beige */
+    border-color: #c0a887;
 }
 
 /* Apply list styles to ANY ul inside a card */
 .card ul {
-    list-style: none; /* Keep default bullets off */
+    list-style: none;
     padding: 0;
-    margin: 10px 0 0 0; /* Add margin top */
-    max-height: 40vh; /* Adjust height as needed */
+    margin: 15px 0 0 0; /* Adjust margin */
+    max-height: 40vh;
     overflow-y: auto;
+    flex-grow: 1; /* Allow list to take up space */
 }
 
 /* Apply list item styles to ANY li inside a card */
 .card li {
-    margin-bottom: 0; /* Remove bottom margin, use padding */
-    padding: 0; /* Remove default padding if any */
-    position: relative; /* Needed for absolute positioning of pseudo-element if used */
-    /* Remove left padding, no longer needed for bullets */
-    /* padding-left: 20px; */
+    margin-bottom: 0;
+    padding: 0;
+    position: relative;
 }
 
 /* Remove custom blue bullet point rule */
-/* .card li::before {
-    content: "•";
-    color: #007bff;
-    font-weight: bold;
-    display: inline-block;
-    position: absolute;
-    left: 5px;
-    top: 6px;
-    font-size: 1.2em;
-} */
 
 /* Apply alternating background color to ANY li inside a card */
 .card li:nth-child(even) {
-    background-color: #f8f9fa; /* Very light gray for even rows */
+    background-color: rgba(255, 255, 255, 0.3); /* Slightly transparent white */
 }
 
 /* Apply link styles to ANY a inside a card */
 .card a {
     text-decoration: none;
-    color: #007bff;
+    color: #333;
     cursor: pointer;
-    display: block; /* Make link take full width for easier clicking */
-    /* Adjust padding now that bullet is gone */
-    padding: 8px 5px 8px 5px;
+    display: block;
+    padding: 10px 8px; /* Adjust padding */
+    transition: background-color 0.2s ease;
 }
 
-/* Apply link hover styles to ANY a inside a card */
 .card a:hover {
-    text-decoration: underline;
+    text-decoration: none; /* No underline on hover */
+    background-color: rgba(255, 255, 255, 0.5); /* Slightly whiter on hover */
 }
 
 /* Remove the old media query */
