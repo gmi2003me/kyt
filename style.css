@@ -214,6 +214,43 @@ body {
     background-color: rgba(255, 255, 255, 0.5); /* Slightly whiter on hover */
 }
 
+/* Style the specific genre/decade modules */
+#male-80s-module,
+#female-80s-module,
+#artists-80s-module,
+#artists-90s-module {
+    background-color: #e4bd5c; /* Golden yellow from image */
+}
+
+/* Adjust text color within these specific modules for contrast */
+#male-80s-module h2,
+#female-80s-module h2,
+#artists-80s-module h2,
+#artists-90s-module h2,
+#male-80s-module a,
+#female-80s-module a,
+#artists-80s-module a,
+#artists-90s-module a {
+    color: #5c491a; /* Dark brown text */
+}
+
+/* Adjust hover for these specific links */
+#male-80s-module a:hover,
+#female-80s-module a:hover,
+#artists-80s-module a:hover,
+#artists-90s-module a:hover {
+    background-color: rgba(255, 255, 255, 0.15); /* Adjust hover background */
+    /* text-decoration: underline; Keep underline from general rule */
+}
+
+/* Adjust alternating background within these modules */
+#male-80s-module li:nth-child(even),
+#female-80s-module li:nth-child(even),
+#artists-80s-module li:nth-child(even),
+#artists-90s-module li:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1); /* Very subtle light overlay */
+}
+
 /* Remove the old media query */
 /* @media (max-width: 768px) {
     .container {
