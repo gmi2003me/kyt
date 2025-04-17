@@ -12,23 +12,36 @@ body {
 
 /* Header Styles */
 .site-header {
-    background-color: #4a6f4a; /* Dark green from logo background */
+    background-color: #e6e6fa; /* Lavender background */
     padding: 10px 20px;
     display: flex;
-    justify-content: space-between; /* Logo left, Link right */
+    justify-content: space-between; /* Logo+Tagline left, Link right */
     align-items: center;
+}
+
+/* Container for logo and tagline */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Space between logo and tagline */
 }
 
 .header-logo {
     max-height: 40px; /* Control logo size */
     width: auto;
+    display: block; /* Prevents extra space below image */
+}
+
+.header-tagline {
+    color: white;
+    font-size: 0.9em; /* Small text */
 }
 
 .login-link {
-    color: #e7d8ff; /* Light purple from logo */
+    color: white; /* White color */
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1.1em;
+    font-weight: normal; /* Remove bold */
+    font-size: 1em; /* Slightly smaller font */
 }
 
 .login-link:hover {
@@ -108,7 +121,7 @@ body {
 
 /* Remove background and container styles from search module */
 .search-module {
-    padding: 15px 0; /* Adjust padding */
+    padding: 25px 0; /* Increased vertical padding for even spacing */
 }
 
 .search-module form {
