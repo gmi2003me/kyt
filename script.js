@@ -13,6 +13,8 @@ const relatedTitle = document.getElementById('related-title'); // Get related ti
 const relatedList = document.getElementById('related-list');
 const male80sList = document.getElementById('male-80s-list'); // New list
 const female80sList = document.getElementById('female-80s-list'); // New list
+const artists80sList = document.getElementById('artists-80s-list'); // New list
+const artists90sList = document.getElementById('artists-90s-list'); // New list
 
 // --- Event Listeners ---
 searchForm.addEventListener('submit', handleSearch);
@@ -20,6 +22,8 @@ resultsList.addEventListener('click', handleVideoClick);
 relatedList.addEventListener('click', handleRelatedArtistClick);
 male80sList.addEventListener('click', handleRelatedArtistClick); // Reuse handler
 female80sList.addEventListener('click', handleRelatedArtistClick); // Reuse handler
+artists80sList.addEventListener('click', handleRelatedArtistClick); // Reuse handler
+artists90sList.addEventListener('click', handleRelatedArtistClick); // Reuse handler
 
 // --- Generic Functions ---
 
@@ -190,6 +194,17 @@ async function fetchFemale80sArtists() {
     await fetchArtistsFromBackend(prompt, female80sList, displayArtistList);
 }
 
+// Function to fetch 80s artists
+async function fetch80sArtists() {
+    const prompt = "Give me a random list of 20 popular music artists and bands from the 80s. Gime me ONLY the name, separated by comma.";
+    await fetchArtistsFromBackend(prompt, artists80sList, displayArtistList);
+}
+
+// Function to fetch 90s artists
+async function fetch90sArtists() {
+    const prompt = "Give me a random list of 20 popular music artists and bands from the 90s. Gime me ONLY the name, separated by comma";
+    await fetchArtistsFromBackend(prompt, artists90sList, displayArtistList);
+}
 
 // --- Click Handlers ---
 
@@ -228,6 +243,8 @@ function initializeApp() {
     // Fetch initial genre lists immediately on load
     fetchMale80sArtists();
     fetchFemale80sArtists();
+    fetch80sArtists(); // Add call for 80s artists
+    fetch90sArtists(); // Add call for 90s artists
 }
 
 initializeApp(); // Call the setup function 
