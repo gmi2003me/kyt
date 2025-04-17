@@ -35,7 +35,7 @@ body {
 /* Adjust modules within the container */
 .modules-container > .card {
     flex: 1; /* Each card takes equal space */
-    min-width: 300px; /* Minimum width before wrapping */
+    min-width: 200px; /* Reduced minimum width */
     /* Ensure they don't shrink below min-width */
     flex-shrink: 0;
 }
