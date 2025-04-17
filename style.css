@@ -121,7 +121,7 @@ body {
 
 /* Remove background and container styles from search module */
 .search-module {
-    padding: 30px 0; /* Match gap for even vertical spacing */
+    padding: 30px 0 15px 0; /* Reduced bottom padding */
 }
 
 .search-module form {
