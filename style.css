@@ -16,14 +16,15 @@ body {
     padding: 0 15px; /* Add some side padding */
 }
 
-.main-title {
+/* Remove main title style rule */
+/* .main-title {
     font-family: 'Playfair Display', serif;
     text-align: center;
     color: #333;
-    font-size: 2.5em; /* Adjust size */
+    font-size: 2.5em; 
     margin-top: 30px;
     margin-bottom: 30px;
-}
+} */
 
 .left-panel {
     min-width: 100%;
@@ -85,27 +86,30 @@ body {
     padding: 15px 0; /* Adjust padding */
 }
 
-/* Style search module header (no longer a card header) */
-.search-module h2 {
-    font-family: 'Playfair Display', serif;
-    margin-top: 0;
-    margin-bottom: 20px;
-    font-size: 1.5em; /* Match card headers */
-    text-align: center;
-    color: #333;
-}
-
 .search-module form {
     display: flex;
     gap: 10px;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    align-items: center; /* Keeps items vertically aligned */
+    justify-content: center; /* Center items */
+    flex-wrap: wrap; /* Allows wrapping */
 }
 
+/* Remove style rule for the label */
+/* .search-label {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3em;
+    color: #333;
+    margin-right: 5px;
+    flex-shrink: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+} */
+
 .search-module input[type="text"] {
-    max-width: 400px;
-    width: 100%;
+    /* Adjust width/grow properties for inline layout */
+    max-width: 350px; /* Slightly reduce max-width */
+    width: auto; /* Let it size based on content/flex */
+    flex-grow: 1; /* Allow input to grow and fill space */
     padding: 12px 15px; /* Adjust padding */
     border: 1px solid #d3c0a0; /* Beige border */
     border-radius: 8px; /* Rounded corners */
@@ -168,7 +172,7 @@ body {
 }
 
 .card a:hover {
-    text-decoration: none; /* No underline on hover */
+    text-decoration: underline; /* Add underline on hover */
     background-color: rgba(255, 255, 255, 0.5); /* Slightly whiter on hover */
 }
 
